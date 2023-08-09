@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Video Downloader</title>
+</head>
+<body>
+    <h1>YouTube Video Downloader</h1>
+    <form method="POST">
+        <label for="link">Enter YouTube Video Link:</label>
+        <input type="text" name="link" id="link" required>
+        <button type="submit">Download</button>
+    </form>
+    {% if video_file %}
+    <p>{{ message }}</p>
+    
+    <a href="{{ url_for('static', filename='videos/+'video_file) }}" download>Download Video</a>
+    {% endif %}
+    </body>
+</html>
