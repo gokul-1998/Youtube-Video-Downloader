@@ -11,8 +11,13 @@ def index():
             try:
                 yt = YouTube(link)
                 stream = yt.streams.get_highest_resolution()
-                video_title = yt.title
-                stream.download('static/videos')
+                video_title = yt.title+".mp4"
+                print(video_title)
+                video_title = yt.title.replace('|', '-') + ".mp4"
+                print(video_title)
+                stream.download('static/videos',filename=video_title)
+                # to set a filename, insert the filename in the download() function
+
                 # to download in a specific folder, insert the folder name in the download() function
                 # stream.download('folder_name')
 
