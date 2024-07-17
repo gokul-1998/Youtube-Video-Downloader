@@ -20,7 +20,7 @@
     {% if video_file %}
         <div id="download-link">
             <p>{{ message }}</p>
-            <a href="{{ url_for('static', filename='videos/' + video_file) }}" download>Download Video</a>
+            <a href="{{ url_for('static', filename='videos/' + video_file+".webm") }}" download>Download Video</a>
         </div>
     {% endif %}
 </body>
