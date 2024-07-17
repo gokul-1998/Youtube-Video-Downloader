@@ -1,0 +1,1125 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.270 --> 00:00:07.520
+Welcome to the first lecture on the course
+on Programming Data Structures and Algorithm
+
+00:00:07.520 --> 00:00:09.879
+in Python.
+
+00:00:09.879 --> 00:00:14.580
+Let's start with the basic definition of what
+we mean by an algorithm and what programming
+
+00:00:14.580 --> 00:00:23.710
+is. As most of you probably know, an algorithm
+is a description of how to systematically
+
+00:00:23.710 --> 00:00:31.840
+perform some task. An algorithm consists of
+a sequence of steps which can we think of
+
+00:00:31.840 --> 00:00:37.180
+as a recipe in order to achieve something.
+So, the word recipe of course, comes from
+
+00:00:37.180 --> 00:00:41.710
+cooking where we have list of ingredients
+and then a sequence of steps to prepare a
+
+00:00:41.710 --> 00:00:47.790
+dish. So, in the same way an algorithm is
+a way to prepare something or to achieve a
+
+00:00:47.790 --> 00:00:56.230
+given task. So, in the context of our thing,
+a recipe will is what we call a program. And
+
+00:00:56.230 --> 00:01:03.129
+we write down a program using a programming
+language. So, the goal of programming language
+
+00:01:03.129 --> 00:01:08.670
+is to be able to describe the sequence of
+steps that are required and to also describe
+
+00:01:08.670 --> 00:01:16.899
+how we might pursue different sequences of
+steps if different things happen in between.
+
+00:01:16.899 --> 00:01:24.930
+The notion of a step is something that can
+be performed by whatever is executing the
+
+00:01:24.930 --> 00:01:29.639
+algorithm. Now a program need not be executed
+by a machine although that will the typical
+
+00:01:29.639 --> 00:01:35.039
+context of computer programming were we expect
+a computer to execute our steps. A program
+
+00:01:35.039 --> 00:01:43.310
+could also be executed by a person. For instance,
+supposing the task at hand is to prepare a
+
+00:01:43.310 --> 00:01:49.569
+hall for a function. So, this will consists
+of different steps such as a cleaning the
+
+00:01:49.569 --> 00:01:55.520
+room, preparing the stage, making sure the
+decoration are up, arranging the chairs and
+
+00:01:55.520 --> 00:02:01.270
+so on. This will be executed by a team of
+people. Now depending on the expertise and
+
+00:02:01.270 --> 00:02:06.409
+the experience of this group of people, you
+can describe this algorithm at different levels
+
+00:02:06.409 --> 00:02:10.000
+of detail.
+For instance, an instruction such as arrange
+
+00:02:10.000 --> 00:02:16.140
+the chair would makes sense if the people
+involved know exactly what is expected. On
+
+00:02:16.140 --> 00:02:19.971
+the other hand, if this is a new group of
+people who have never done this before; you
+
+00:02:19.971 --> 00:02:24.720
+might need to describe to step in more detail.
+For instance, you might want to say that arrange
+
+00:02:24.720 --> 00:02:32.060
+the chairs in the 8 rows and put 10 chairs
+in each row. So, the notion of a step is subjective,
+
+00:02:32.060 --> 00:02:38.090
+it depends on what we expect of the person
+or the machine which is executing the algorithm.
+
+00:02:38.090 --> 00:02:45.510
+And in terms of that capability, we describe
+the algorithm itself.
+
+00:02:45.510 --> 00:02:53.230
+Our focus in this course is going to be on
+computer algorithms and typically, these algorithms
+
+00:02:53.230 --> 00:02:58.820
+manipulate information. The most basic kind
+of algorithm that all of us are familiar with
+
+00:02:58.820 --> 00:03:05.380
+from high school is an algorithm that computes
+numerical functions. For instance, we could
+
+00:03:05.380 --> 00:03:11.550
+have an algorithm which takes two numbers
+x and y, and computes x to the power y. So,
+
+00:03:11.550 --> 00:03:14.090
+we have seen any number of such functions
+in school.
+
+00:03:14.090 --> 00:03:19.940
+For example, to compute square root of x,
+so what we do in school is we have complicated
+
+00:03:19.940 --> 00:03:25.360
+way to compute square root of x or we might
+have x divided by y where we do long division
+
+00:03:25.360 --> 00:03:32.110
+and so on. These are all algorithms, which
+compute values given one or more numbers they
+
+00:03:32.110 --> 00:03:36.740
+compute the output of this function.
+
+00:03:36.740 --> 00:03:42.170
+But all of us who have used computers know
+that many other things also fall within the
+
+00:03:42.170 --> 00:03:48.140
+realm of computation. For instance, if we
+use a spreadsheet to arrange information and
+
+00:03:48.140 --> 00:03:53.670
+then we want to sort of column. So, this involves
+rearranging the items in the column in some
+
+00:03:53.670 --> 00:03:58.500
+order either in ascending order or descending
+order. So, reorganizing information is also
+
+00:03:58.500 --> 00:04:07.230
+a computational task and we need to know how
+to do this algorithmically. We also see computation
+
+00:04:07.230 --> 00:04:13.570
+around us in the day today’s life. For instance,
+when we go to a travel booking site and we
+
+00:04:13.570 --> 00:04:19.910
+try to book a flight from one city to another
+city it will offer to arrange the flights
+
+00:04:19.910 --> 00:04:25.449
+in terms of the minimum time or the minimum
+cost. So, these are optimization problems.
+
+00:04:25.449 --> 00:04:30.020
+This involves also arranging information in
+a particular way and then computing some quantity
+
+00:04:30.020 --> 00:04:33.520
+that we desire.
+In this case, we want to know that a we can
+
+00:04:33.520 --> 00:04:38.939
+get from a to b, and b among all the ways
+we can get from a to b we want the optimum
+
+00:04:38.939 --> 00:04:46.689
+one. And of course, there are many, many more
+things that we see day today, which are executed
+
+00:04:46.689 --> 00:04:51.580
+by computer programs. We can play games. For
+instance, we can solve Sudoku or we can play
+
+00:04:51.580 --> 00:04:56.979
+chess against a program. When we use the word
+processor to type a document or even when
+
+00:04:56.979 --> 00:05:04.270
+we use our cell phones to type sms messages,
+the computer suggests correction in our spelling.
+
+00:05:04.270 --> 00:05:10.930
+We will look at some of these things in this
+course, but the point is to note that a program
+
+00:05:10.930 --> 00:05:15.759
+in our context is anything that looks at information
+and manipulates it to a given requirement.
+
+00:05:15.759 --> 00:05:21.809
+So, it is not only a question of taking a
+number in and putting the number out. It could
+
+00:05:21.809 --> 00:05:25.490
+involve rearranging things. It could involve
+computing more complicated things. It could
+
+00:05:25.490 --> 00:05:31.430
+involve organizing the information in a particular
+ways, so these computations become more tractable
+
+00:05:31.430 --> 00:05:37.120
+and that is what we call a data structure.
+
+00:05:37.120 --> 00:05:42.749
+So to illustrate this let us look at the function
+which most of us have seen and try to understand
+
+00:05:42.749 --> 00:05:48.599
+the algorithmically. So, the property that
+I want to compute is the greatest common decide
+
+00:05:48.599 --> 00:05:55.340
+divisor of two positive integers m and n.
+So, as we know a divisor is a number that
+
+00:05:55.340 --> 00:06:01.539
+divides. So k is a divisor of m; if I can
+divide m by k and get no reminder. So, the
+
+00:06:01.539 --> 00:06:06.300
+greatest common divisor of m and n must be
+something which is a common divisor. So, common
+
+00:06:06.300 --> 00:06:12.229
+means it must divide both and it must be the
+largest of these. So, if the largest k such
+
+00:06:12.229 --> 00:06:20.400
+that k divides m and k also divides m.
+For instance, if we look at the number 8 and
+
+00:06:20.400 --> 00:06:28.110
+12, then we can see that 4 is the factor of
+8, 4 is the divisor of 8, 4 is also divisor
+
+00:06:28.110 --> 00:06:34.680
+of 12, another divisor of 12 is 6, but 6 is
+not a divisor of 8. So, if we go through the
+
+00:06:34.680 --> 00:06:38.779
+divisors of 8 and twelve it is easy to check
+that the largest number that divides both
+
+00:06:38.779 --> 00:06:49.150
+8 and 12 is 4. So, gcd of 8 and 12 is 4. What
+about 18 and 25. 25 is 5 by 5. So, it has
+
+00:06:49.150 --> 00:06:55.810
+only one divisor other than 1 and 25, which
+is 5. And 5 is not a divisor of 18, but fortunately
+
+00:06:55.810 --> 00:07:00.979
+1 is a divisor of 18. So, we can say that
+gcd of 18 and 25 is 1; there is no number
+
+00:07:00.979 --> 00:07:08.319
+bigger than 1 that divides both 18 and 25.
+Since 1 divides every number, as we saw in
+
+00:07:08.319 --> 00:07:15.090
+the case of 18 and 25, there will always be
+at least one common divisor among the two
+
+00:07:15.090 --> 00:07:18.729
+numbers.
+The gcd will always be well defined; it will
+
+00:07:18.729 --> 00:07:24.009
+never be that we cannot find the common divisor
+and because all the common divisors will be
+
+00:07:24.009 --> 00:07:29.689
+numbers, we can arrange them from smallest
+to largest and pick the largest one as the
+
+00:07:29.689 --> 00:07:34.900
+greatest common divisor. So, given any pair
+of positive number m and n, we can definitely
+
+00:07:34.900 --> 00:07:38.699
+compute the gcd of these two numbers.
+
+00:07:38.699 --> 00:07:46.169
+So, how would one go about computing gcd of
+m, n? So, this is where we come to the algorithmic
+
+00:07:46.169 --> 00:07:55.039
+way, we want to describe the uniform way of
+systematically computing gcd of m n for any
+
+00:07:55.039 --> 00:08:02.129
+m or any n. So, here is a very simple procedure.
+It is not the most efficient; we will see
+
+00:08:02.129 --> 00:08:07.250
+better once as we go along. But if we just
+look at the definition of gcd it says look
+
+00:08:07.250 --> 00:08:11.559
+at all the factors of m, look at all the factor
+of n and find the largest one which is the
+
+00:08:11.559 --> 00:08:18.749
+factor of both. So, the naive way to do this
+would be first list out factors of m, then
+
+00:08:18.749 --> 00:08:25.889
+list out all the factor of second number n
+and then among these two lists report the
+
+00:08:25.889 --> 00:08:30.680
+largest number that appears in both lists.
+This is almost literally the definition of
+
+00:08:30.680 --> 00:08:35.690
+gcd.
+Now question is does this constitute an algorithm.
+
+00:08:35.690 --> 00:08:41.780
+Well, at a high level of detail if we think
+of list out factors as a single step, what
+
+00:08:41.780 --> 00:08:48.630
+we want from an algorithm are two things.
+One is that the description of what to do
+
+00:08:48.630 --> 00:08:54.270
+must be written down in a finite way. In the
+sense that I should be able to write down
+
+00:08:54.270 --> 00:08:58.880
+the instruction regardless of the value m
+and n in such a way it can read it and comprehend
+
+00:08:58.880 --> 00:09:02.180
+it once and for all.
+Here is very clear, we have exactly three
+
+00:09:02.180 --> 00:09:07.120
+steps right. So, we have three steps at constitute
+the algorithm so it certainly presented in
+
+00:09:07.120 --> 00:09:14.320
+a finite way. The other requirement of an
+algorithm is that we must get the answer after
+
+00:09:14.320 --> 00:09:20.350
+a finite number of steps. Of this finite number
+of steps may be different for different values
+
+00:09:20.350 --> 00:09:25.520
+of m and n, you can imagine that if you have
+a very small number for n there are not many
+
+00:09:25.520 --> 00:09:30.150
+factors they are the very large number for
+n you might have many factors. So, the process
+
+00:09:30.150 --> 00:09:35.910
+of listing out the factors of m and n may
+take a long time; however, we want to be guaranteed
+
+00:09:35.910 --> 00:09:41.410
+that this process will always end and then
+having done this we will always able to find
+
+00:09:41.410 --> 00:09:44.690
+the largest number that appears in both lists.
+
+00:09:44.690 --> 00:09:53.180
+To argue that this process is well defined
+all we need to realize is that the factors
+
+00:09:53.180 --> 00:10:00.190
+of m must be between 1 and m. In other words,
+we although there are infinitely many different
+
+00:10:00.190 --> 00:10:03.940
+possibility as factors we don't have to look
+at any number bigger than m, because it cannot
+
+00:10:03.940 --> 00:10:10.590
+go into m evenly. So, all we need to do to
+compute the factors of m is to test every
+
+00:10:10.590 --> 00:10:16.500
+number is range one to m and if it divides
+m without a reminder, then we add it to list
+
+00:10:16.500 --> 00:10:22.320
+of factors. So, we start with empty list of
+factors and we consider it on 1, 2, 3, 4 up
+
+00:10:22.320 --> 00:10:27.380
+to m and for each such number we check, whether
+if we divide m by this number we get a reminder
+
+00:10:27.380 --> 00:10:31.770
+of 0 we get a reminder of 0 we add it to the
+list.
+
+00:10:31.770 --> 00:10:39.080
+Let us look at the concrete example, let us
+try to compute the gcd of 14 and 63. So, the
+
+00:10:39.080 --> 00:10:44.690
+first step in our algorithm says to compute
+the factors of 14. So, by our observation
+
+00:10:44.690 --> 00:10:49.840
+above the factors of 14 must lie between one
+and 14 nothing bigger than 14 can be a factor.
+
+00:10:49.840 --> 00:10:55.530
+So, we start a listing our all the possible
+factors between one and 14 and testing them.
+
+00:10:55.530 --> 00:10:57.980
+So, we know of course, that 1 will always
+divide; in this case 2 divides 14, because
+
+00:10:57.980 --> 00:11:05.780
+14 dived by 2 is 7 with no remainder. Now
+3 does not divide, 4 does not divide, 5 does
+
+00:11:05.780 --> 00:11:14.550
+not divide, 6 does not divide; but 7 does,
+because if we divide 14 by 7 we get a remainder
+
+00:11:14.550 --> 00:11:20.780
+of 0. Then again 8 does not divide, nine does
+not divide and so on.
+
+00:11:20.780 --> 00:11:25.910
+And finally, we find that the only other factor
+left is 14 itself. So for every number m - 1
+
+00:11:25.910 --> 00:11:29.590
+and m will be factors and then there may be
+factors in between.
+
+00:11:29.590 --> 00:11:34.980
+So, having done this we have identified that
+factors of 14 and these factors are precisely
+
+00:11:34.980 --> 00:11:40.060
+the 1, 2, 7 and 14.
+
+00:11:40.060 --> 00:11:46.760
+The next step in computing the gcd of 14 and
+63 is to compute the factors of 63. So, in
+
+00:11:46.760 --> 00:11:51.120
+the same way we write down the all the numbers
+from one to 63 and we check which ones divide.
+
+00:11:51.120 --> 00:11:57.000
+So, again we will find that 1 divides, here
+2 does not divide; because 63 is not even,
+
+00:11:57.000 --> 00:12:02.850
+3 does divides, then we find a bunch of numbers
+here, which do not divide. Then we find that
+
+00:12:02.850 --> 00:12:09.600
+7 divides, because 7 9's are 63. Then again
+8 does not divides, but 9 does. Then again
+
+00:12:09.600 --> 00:12:15.230
+there are large gap of numbers, which do not
+divide. And then 21 does divide, because 21
+
+00:12:15.230 --> 00:12:20.940
+3's are 63. And then finally, we find that
+the last factor that we have is 63. So, if
+
+00:12:20.940 --> 00:12:24.760
+we go through this systematically from one
+to 63 crossing out each number which is not
+
+00:12:24.760 --> 00:12:32.050
+a factor we end up with the list 1, 3, 7,
+9, 21 and 63.
+
+00:12:32.050 --> 00:12:39.190
+Having computed the factors of the two numbers
+14 and 63 the next step in our algorithm says
+
+00:12:39.190 --> 00:12:44.520
+that we must find the largest factor that
+appears in both list. So, how do we do this,
+
+00:12:44.520 --> 00:12:50.300
+how do we construct a list of common factors.
+Now there are more clever ways to do this,
+
+00:12:50.300 --> 00:12:55.410
+but here is a very simple way. We just go
+through one of the lists say the list of factors
+
+00:12:55.410 --> 00:13:00.310
+of 14 and for each item in the list we check
+it is a factor of 63.
+
+00:13:00.310 --> 00:13:06.610
+So, we start with 1 and we say does 1 appear
+as a factor of 63. It does so we add to the
+
+00:13:06.610 --> 00:13:11.690
+list of common factors. Then we look at 2
+then we ask does it appear; it does not appear
+
+00:13:11.690 --> 00:13:20.060
+so we skip it. Then we look at 3 and look
+at 7 rather and we find that 7 does appear
+
+00:13:20.060 --> 00:13:25.390
+so we add 7. Then finally, we look at 14 and
+find that 14 does not appears so we skip it.
+
+00:13:25.390 --> 00:13:35.560
+In this way we have systematically gone through
+1, 2, 7 and 14 and concluded that of these
+
+00:13:35.560 --> 00:13:41.140
+only 1 and 7 appear in both list.
+And now having done this we have a list of
+
+00:13:41.140 --> 00:13:46.760
+all the common factors we computed them from
+smallest to biggest, because we went to the
+
+00:13:46.760 --> 00:13:51.340
+factors of 14 in ascending order. So, this
+list will also be in ascending order. So,
+
+00:13:51.340 --> 00:13:57.030
+returning the largest factors just returns
+the right most factor in this list namely
+
+00:13:57.030 --> 00:14:01.790
+7. This is the output of our function. We
+have computed the factors of 14, computed
+
+00:14:01.790 --> 00:14:06.130
+the factors of 63, systematically checked
+for every factor of 14, whether it is also
+
+00:14:06.130 --> 00:14:11.410
+a factor of 63 and computed the list of common
+factors here and then from this list we have
+
+00:14:11.410 --> 00:14:18.490
+extracted the largest one and this in fact,
+is our gcd. This is an example of how this
+
+00:14:18.490 --> 00:14:19.910
+algorithm would execute.
+
+00:14:19.910 --> 00:14:29.870
+If you have to write it down in little more
+detail, then we could say that we need to
+
+00:14:29.870 --> 00:14:34.490
+notice that we need to remember these lists,
+right, and then come back to them. So, we
+
+00:14:34.490 --> 00:14:38.630
+need to compute the factors of 14 keep it
+side we need to write it down somewhere we
+
+00:14:38.630 --> 00:14:42.290
+need to compute the factor of 63 write it
+down somewhere and then compare these two
+
+00:14:42.290 --> 00:14:49.290
+lists. So, in other words we need to assign
+some names to store these. Let us call fm
+
+00:14:49.290 --> 00:14:57.090
+for factors of m and fn factors of n as the
+names of these lists. So, what we do is that
+
+00:14:57.090 --> 00:15:04.130
+we run through the numbers one to m. And for
+each i, in this list 1 to m we check, whether
+
+00:15:04.130 --> 00:15:09.660
+i divide m, whether m divided by i as reminder
+0 and if so we add it to the list factors
+
+00:15:09.660 --> 00:15:17.220
+of m or fm. Similarly, for each j from 1 to
+n we check, whether j divides n and if so
+
+00:15:17.220 --> 00:15:22.100
+we add it to the list fn.
+Now we have two lists fm and fn which are
+
+00:15:22.100 --> 00:15:28.430
+the factors of m and factors of n. Now we
+want to compute the list of common factors,
+
+00:15:28.430 --> 00:15:34.550
+which we will call cf. So, what we do is for
+every f that is a factor of a first number,
+
+00:15:34.550 --> 00:15:41.280
+remember in our case was 14 where each f so
+we ran through 1, 2, 7 and 14 in our case
+
+00:15:41.280 --> 00:15:46.510
+right. So, for each f is list we add f to
+the list of the common factors if it also
+
+00:15:46.510 --> 00:15:52.810
+appears in the other list. So, in the other
+list if you number is 1, 3, 7, 9, 21 and 63.
+
+00:15:52.810 --> 00:15:58.940
+So, we compare f with this list and if we
+find it we add it to cf.
+
+00:15:58.940 --> 00:16:04.970
+And having done this now we want to return
+the largest value of the list of common factors.
+
+00:16:04.970 --> 00:16:08.870
+Remember that one will always be a common
+factor. So, the list cf will not be empty.
+
+00:16:08.870 --> 00:16:14.470
+There will be at least one value, but since
+we add them in ascending order since the list
+
+00:16:14.470 --> 00:16:20.480
+fm and fn, where constructed from 1 to m and
+1 to n the largest value will also be the
+
+00:16:20.480 --> 00:16:26.970
+right most value. This gives us a slightly
+more detailed algorithm for gcd. It is more
+
+00:16:26.970 --> 00:16:31.300
+or less same as previous one except spells
+out little more details how to compute the
+
+00:16:31.300 --> 00:16:36.100
+list of factors of m and how to compute the
+list of factors of n and how to compute the
+
+00:16:36.100 --> 00:16:40.160
+largest of common factor between these two
+lists. So, earlier we had three abstract statements
+
+00:16:40.160 --> 00:16:48.170
+now we are expanded out into 6, slightly more
+detailed statements.
+
+00:16:48.170 --> 00:16:54.360
+This already gives us enough information to
+write our first python program. Of course,
+
+00:16:54.360 --> 00:16:57.930
+we will need to learn little more, before
+we know how to write it, but we can certainly
+
+00:16:57.930 --> 00:17:04.329
+figure out how to read it. So, what this python
+programming is doing is exactly what we described
+
+00:17:04.329 --> 00:17:09.980
+informally in the previous step. The first
+thing in the python program is a line which
+
+00:17:09.980 --> 00:17:15.980
+defines the function. So, we are defining
+a function gcd of m comma n. So, m and n are
+
+00:17:15.980 --> 00:17:20.150
+the two arguments which could be any number
+like any function. It's like when we read
+
+00:17:20.150 --> 00:17:25.160
+f of x y in mathematics it means x and y are
+arbitrator values and for every x and y do
+
+00:17:25.160 --> 00:17:30.559
+something depending on the values that we
+a call the function with. So, this says that
+
+00:17:30.559 --> 00:17:40.110
+this is a definition, so def for definition
+of a function gcd m, n.
+
+00:17:40.110 --> 00:17:49.410
+Now the first step is to compute the list
+of factors of m. In python we write a list
+
+00:17:49.410 --> 00:17:56.840
+using square brackets. So, list is written
+as x y z and so on. So, the empty list is
+
+00:17:56.840 --> 00:18:01.870
+just an open bracket and a square close bracket.
+So, we start off with an empty list of factors.
+
+00:18:01.870 --> 00:18:13.990
+So, this equality means assign a value. So,
+we assign fm the list of factors of m to be
+
+00:18:13.990 --> 00:18:19.610
+the empty list. Now we need to test every
+value in the range 1 to n.
+
+00:18:19.610 --> 00:18:26.190
+Now python has a built in function called
+range, but because of we shall see, because
+
+00:18:26.190 --> 00:18:32.090
+of peculiarity of python this returns not
+the range you except, but one less. So, if
+
+00:18:32.090 --> 00:18:37.420
+I say give the numbers in the range 1 to n
+plus 1, it gives me in the range one to m,
+
+00:18:37.420 --> 00:18:42.500
+one up to the upper limit, but not including
+the upper limit. So, this will say that i
+
+00:18:42.500 --> 00:18:49.540
+takes the values one two three up to m. For
+each of these values of i, we check whether
+
+00:18:49.540 --> 00:18:56.210
+this is true. Now percentage is the remainder
+operation.
+
+00:18:56.210 --> 00:19:03.280
+It checks whether remainder of m divided by
+i is 0. If the remainder of m divided by i
+
+00:19:03.280 --> 00:19:08.340
+is 0 then we will append i to the list fn,
+we will add it to the right append is the
+
+00:19:08.340 --> 00:19:13.870
+English word which just means add to the end
+of the list. So, we append i to n. So, in
+
+00:19:13.870 --> 00:19:19.980
+this step, we have computed fm. This is exactly
+what we wrote informally in the previous example
+
+00:19:19.980 --> 00:19:26.740
+we just said that for each i from 1 to m add
+i to fm if i divides m and now we have done
+
+00:19:26.740 --> 00:19:31.640
+it in python syntax. So, we have defined an
+empty list of factors and for each number
+
+00:19:31.640 --> 00:19:35.690
+in that range we have checked it is a divisor
+and then add it.
+
+00:19:35.690 --> 00:19:40.309
+And now here we do the exactly the same thing
+for n. So, we start with the empty list of
+
+00:19:40.309 --> 00:19:47.510
+factors of n for every j in for this range
+if it divides we append it. Now, at this point
+
+00:19:47.510 --> 00:19:55.260
+we have two list fm and fn. Now, we want to
+compute the list of common factors. So, we
+
+00:19:55.260 --> 00:20:01.630
+use cf to denote the list of common factors.
+Initially there are no common factors. Now,
+
+00:20:01.630 --> 00:20:06.980
+for every factor in the first list if the
+factor appears in the second list then we
+
+00:20:06.980 --> 00:20:10.630
+append it to cf.
+So, the same function append is being use
+
+00:20:10.630 --> 00:20:16.160
+throughout. Just take a list and add a value.
+Which value? We add the value that we are
+
+00:20:16.160 --> 00:20:20.710
+looking at now provided it satisfies the conditions.
+So, earlier we were adding provided the divisor
+
+00:20:20.710 --> 00:20:25.480
+was 0 uh the remainder was 0, now we are adding
+it provided it appears in both list. For every
+
+00:20:25.480 --> 00:20:28.610
+f in the first list if it appears in the second
+list add it.
+
+00:20:28.610 --> 00:20:38.670
+After this we have computed fm, cf. And now
+we want the right most element. So, this is
+
+00:20:38.670 --> 00:20:45.990
+just some python syntax if you see which says
+that instead of, if we start counting from
+
+00:20:45.990 --> 00:20:51.390
+the left then the number the positions in
+the list are number 0, 1, 2, 3, and 4. But
+
+00:20:51.390 --> 00:20:54.580
+python has a shortcut which says that you
+want to count from the right then we count
+
+00:20:54.580 --> 00:20:59.200
+the numbers as minus 1, minus 2 and so on.
+So, it says return the minus 1'th element
+
+00:20:59.200 --> 00:21:04.140
+of cf which in Python jargon means return
+the right most element. So, this is the right
+
+00:21:04.140 --> 00:21:15.220
+most element.
+At this point it is enough to understand that
+
+00:21:15.220 --> 00:21:21.530
+we can actually try and decode this code this
+program even though we may not understand
+
+00:21:21.530 --> 00:21:26.790
+exactly why we are using colon in some places
+and why we are pushing something. See notice
+
+00:21:26.790 --> 00:21:31.620
+that are other syntactic things here, so there
+are for example, you have these punctuation
+
+00:21:31.620 --> 00:21:37.720
+marks, which are a bit odd like these colons.
+Then you have the fact that this line is indented
+
+00:21:37.720 --> 00:21:41.382
+with respect to this line, this line is indented
+to this line.
+
+00:21:41.382 --> 00:21:47.740
+These are all features that make python programs
+a little easier to read and write then programs
+
+00:21:47.740 --> 00:21:52.960
+in other languages. So, we will come to these
+when we learn python syntax more formally.
+
+00:21:52.960 --> 00:22:00.630
+But at this point you should be able to convince
+yourself that this set of python steps is
+
+00:22:00.630 --> 00:22:06.780
+a very faithful rendering of the informal
+algorithm that we wrote in the previous slide.
+
+00:22:06.780 --> 00:22:17.620
+Let us note some points that we can already
+deduce from this particular example. So, the
+
+00:22:17.620 --> 00:22:22.630
+first important point is that we need a way
+to keep track of intermediate values. So,
+
+00:22:22.630 --> 00:22:27.610
+we have two names to begin with the names
+of our arguments m and n. Then we use these
+
+00:22:27.610 --> 00:22:33.020
+three names to compute this list of factors
+and common factors and we use other names
+
+00:22:33.020 --> 00:22:39.970
+like i, j and f. In order to run through these.
+We need i to run from 1 to n. We need j to
+
+00:22:39.970 --> 00:22:44.620
+run from 1 to n. Of course, we could reuse
+i. But it is okay. We use f to run through
+
+00:22:44.620 --> 00:22:51.380
+all the factors in cf. So, these are all ways
+of keeping track of intermediate values. The
+
+00:22:51.380 --> 00:22:54.390
+second point to note is that a value can be
+a single item.
+
+00:22:54.390 --> 00:23:00.929
+For example, m n are numbers, similarly i,
+j and f at each step are numbers. So, these
+
+00:23:00.929 --> 00:23:07.570
+will be single values or they could be collections.
+So, there are lists. So fm is a list, fn is
+
+00:23:07.570 --> 00:23:11.640
+a list. So, it is a single name denoting a
+collection of values in this case a list a
+
+00:23:11.640 --> 00:23:17.310
+sequence has a first position and next position
+and a last position. These are list of numbers.
+
+00:23:17.310 --> 00:23:21.970
+One can imagine the other collections and
+we will see them as we go along. So, collections
+
+00:23:21.970 --> 00:23:27.170
+are important, because it would be very difficult
+to write a program if we had to keep producing
+
+00:23:27.170 --> 00:23:31.470
+a name for every factor of m separately. We
+need a name collectively for all the factors
+
+00:23:31.470 --> 00:23:38.540
+of m regardless of how big m is. These names
+can denote can be denote single values or
+
+00:23:38.540 --> 00:23:43.590
+collections of values. And a collection of
+values with the particular structure is precisely
+
+00:23:43.590 --> 00:23:49.360
+what we call data structure. So, these are
+more generally called data structures. So,
+
+00:23:49.360 --> 00:23:56.250
+in this case the data structure we have is
+a list.
+
+00:23:56.250 --> 00:24:01.080
+What can we do with these names and values
+well one thing is we can assigned a value
+
+00:24:01.080 --> 00:24:06.670
+to a name. So, for instance when we write
+fn is equal to the empty list we are explicitly
+
+00:24:06.670 --> 00:24:11.190
+setting the value of fn to be the empty list.
+This tells two things this says the value
+
+00:24:11.190 --> 00:24:15.840
+is empyt list, so it is also tells python
+the fn denotes the lists these are the two
+
+00:24:15.840 --> 00:24:20.680
+steps going on here as we see.
+And the other part is that when we write something
+
+00:24:20.680 --> 00:24:27.370
+like for each f in the list cf, which is implicitly
+saying that take every value in cf and assign
+
+00:24:27.370 --> 00:24:31.420
+it one by one to the values f to the name
+f. Right though they do not have this equality
+
+00:24:31.420 --> 00:24:37.420
+sign explicitly implicitly this is assigning
+the new values for f as we step the list cf
+
+00:24:37.420 --> 00:24:45.460
+right. So, the main thing that we do in a
+python program is to assign values to names.
+
+00:24:45.460 --> 00:24:50.160
+And having assigned a value we can then modify
+the value. For instance every time we find
+
+00:24:50.160 --> 00:24:55.679
+a new factor of n we do not want to through
+any old factor we want to take the existing
+
+00:24:55.679 --> 00:25:01.490
+list fm and we want to add it. So, this function
+append for instance modifies the value of
+
+00:25:01.490 --> 00:25:06.410
+the name fn to a new name which takes the
+old name and sticks an i at the end of it.
+
+00:25:06.410 --> 00:25:11.220
+More generally you could have a number and
+we could want a replaces by two times a number.
+
+00:25:11.220 --> 00:25:18.880
+So, we might have something like i is equal
+to two times i. So, star stands for multiplication
+
+00:25:18.880 --> 00:25:23.150
+this does not mean that i is equals to two
+times i arithmetically because; obviously,
+
+00:25:23.150 --> 00:25:28.120
+unless i is 0 i cannot be equal to two times
+itself. What is means is that take the current
+
+00:25:28.120 --> 00:25:32.410
+value of i, multiply it by two and assign
+it to i. So, we will see this as we go along,
+
+00:25:32.410 --> 00:25:38.510
+but assignment can either assign a completely
+new value or you could update the value using
+
+00:25:38.510 --> 00:25:43.690
+the old value. So, here we taking the old
+value of the function of the list fn and we
+
+00:25:43.690 --> 00:25:49.270
+are appending a value it would getting a new
+value of fn.
+
+00:25:49.270 --> 00:25:54.610
+The other part that we are need to note is
+how we execute steps. So, we said at the beginning
+
+00:25:54.610 --> 00:25:59.720
+of today's lecture a program is a sequence
+of steps. But we do not just execute the sequence
+
+00:25:59.720 --> 00:26:05.770
+of steps from beginning to end blindly. Sometimes
+we have to do the same thing again and again.
+
+00:26:05.770 --> 00:26:12.460
+For instance we have to check for every possible
+factor from 1 to m if it divides m and then
+
+00:26:12.460 --> 00:26:17.690
+put it in the list. So, some steps are repeated
+we do something, for examples here for each
+
+00:26:17.690 --> 00:26:23.179
+item in a list.
+And some steps are executed only if the value
+
+00:26:23.179 --> 00:26:31.420
+that we are looking at meets particular conditions.
+When we say something like if m percent i
+
+00:26:31.420 --> 00:26:41.330
+is 0, if the remainder of m divided by a is
+0 then append. So, the step append i to fm
+
+00:26:41.330 --> 00:26:47.920
+the factors of m this happens only if i matches
+the condition that it is a factor of m. So,
+
+00:26:47.920 --> 00:26:53.220
+we have repeated steps where same thing done
+again and again. And they have conditionals
+
+00:26:53.220 --> 00:26:57.530
+steps something which is done only if a particular
+condition holds.
+
+00:26:57.530 --> 00:27:04.080
+So, we will stop here. These examples should
+show you that programs are not very different
+
+00:27:04.080 --> 00:27:08.600
+from what we know intuitively, it is only
+a question of writing them down correctly,
+
+00:27:08.600 --> 00:27:12.990
+and making sure that we keep track of all
+the intermediate values and steps that we
+
+00:27:12.990 --> 00:27:17.440
+need as we long, so that we do not lose things.
+We will look at this example in more detail
+
+00:27:17.440 --> 00:27:22.000
+as we go long, and try to find other ways
+of writing it, and examine other features,
+
+00:27:22.000 --> 00:27:24.340
+but essentially this is a good way of illustrating
+programming.
+

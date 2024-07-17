@@ -13,6 +13,8 @@ def index():
                 print("downloading inside try")
                 pwd=os.getcwd()
                 videos_folder = os.path.join(pwd, 'static','videos')
+                if not os.path.exists(videos_folder):
+                    os.makedirs(videos_folder)
                 try:
                     print(os.listdir(videos_folder))
                 except Exception as e:
@@ -22,7 +24,7 @@ def index():
 
                     # remove all files in the videos folder
                     file_path = os.path.join(videos_folder, file_name)
-                    # os.remove(file_path)
+                    os.remove(file_path)
                 print("removed")
                 video_title=youtube_down(link)
                 message = f"Downloaded '{video_title}' successfully!"
