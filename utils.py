@@ -20,6 +20,7 @@ if not os.path.exists(output_dir):
 
 outtmpl=os.path.join('static', output_dir,'%(title)s.%(ext)s')
 def youtube_down(link):
+    print("inside youtube_down")
 
     video_id = link.split('v=')[-1].split('&')[0]
     ydl_opts = {
@@ -35,6 +36,7 @@ def youtube_down(link):
     }
 
     try:
+        print("inside try")
         with YoutubeDL(ydl_opts) as ydl:
             # Fetch video info
             info_dict = ydl.extract_info(video_id, download=False)
