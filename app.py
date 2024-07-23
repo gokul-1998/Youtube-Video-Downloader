@@ -26,14 +26,15 @@ def index():
                     file_path = os.path.join(videos_folder, file_name)
                     os.remove(file_path)
                 print("removed")
-                video_title=youtube_down(link)
+                video_id,video_title=youtube_down(link)
                 message = f"Downloaded '{video_title}' successfully!"
+
             except Exception as e:
                 message = f"An error occurred: {str(e)}"
         else:
             message = "Please enter a valid YouTube link."
         print("downloaded")
-        return render_template('index.html', message=message,video_file=video_title)
+        return render_template('index.html', message=message,video_title=video_title,video_id=video_id)
     
     return render_template('index.html')
 
@@ -43,8 +44,11 @@ def index():
 def download_file(filename):
     # /algorithms%20and%20programming:%20simple%20gcd
     print("filename",filename)
+    video_title=request.args.get('video_title')
     file=filename+".webm"
-    return send_from_directory('static/videos', file, as_attachment=True)
+    print(video_title,"video title")
+    return send_from_directory('static/videos', file, as_attachment=True,download_name=video_title+".webm")
+
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port=5000)

@@ -41,8 +41,10 @@ def youtube_down(link):
             # Fetch video info
             info_dict = ydl.extract_info(video_id, download=False)
             
+            
             # # Extract relevant info
             video_info = {
+                'id': info_dict.get('id', None),
                 'title': info_dict.get('title', None),
                 'rating': info_dict.get('average_rating', None),
                 'author': info_dict.get('uploader', None),
@@ -51,14 +53,25 @@ def youtube_down(link):
                 'description': info_dict.get('description', None),
             }
             
+            
             # Download the highest quality video
             ydl.download([video_id])
             
             print('Video downloaded successfully')
-            return video_id
+            return video_info['id'],get_safe_title(video_info['title'])
 
     except Exception as e:
         print('Error:', str(e))
 
 # Example usage
 # youtube_down('https://www.youtube.com/watch?v=YOUR_VIDEO_ID')
+import string
+
+def get_safe_title(title):
+    x=""
+    for i in title:
+        if not i.isalnum():
+            x+="_"
+        else:
+            x+=i
+    return x
