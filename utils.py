@@ -26,7 +26,7 @@ def youtube_down(link):
     ydl_opts = {
         'format': 'bestvideo+bestaudio/best',
         # instead of title we can use %(id)s to save the file with the video id
-        'outtmpl': os.path.join('static', output_dir,'%(id)s.%(ext)s'),
+        'outtmpl': os.path.join('static', output_dir,'%(title)s.%(ext)s'),
         'writesubtitles': True,
         'writeautomaticsub': True,
         'writethumbnail': True,
@@ -57,7 +57,7 @@ def youtube_down(link):
             # Download the highest quality video
             ydl.download([video_id])
             
-            print('Video downloaded successfully')
+            print('Video downloaded successfully', video_info['title'])
             return video_info['id'],get_safe_title(video_info['title'])
 
     except Exception as e:
@@ -75,3 +75,7 @@ def get_safe_title(title):
         else:
             x+=i
     return x
+
+
+if __name__ == '__main__':
+    youtube_down(input('Enter YouTube video URL: '))
